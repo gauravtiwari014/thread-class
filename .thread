@@ -1,0 +1,30 @@
+public class ThreadClass extends Thread{
+
+	//Thread t1;
+	public ThreadClass()
+	{
+		super("childThread");
+		start();
+	}
+	public void run()
+	{
+		System.out.println("Entering Child Thread...");
+		System.out.println("In The Child Thread...");
+		System.out.println("Exiting Child Thread.....");
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("In The Main Thread....");
+		System.out.println("Invoking Child Thread...");
+		ThreadClass tc = new ThreadClass();
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("Back In Main Thread...");
+		System.out.println("Exiting Main Thread...");
+	}
+
+}
